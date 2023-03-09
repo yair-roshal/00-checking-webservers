@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "3d88b2d5-27bd-4d51-823c-ce82693fba58",
+		"name": "monolith",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17283931"
+	},
+	"item": [
+		{
+			"name": "Create Webserver",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n \"name\": \"funny\",\n \"uri\": \"https://www.pexels.com/search/funny/\"\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/webservers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"webservers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1. Read (Get) Webserver",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/webservers/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"webservers",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Webserver",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n         \"name\": \"funny2222\",\n        \"uri\": \"https://www.pexels.com/search/funny/\",\n        \"status\":\"success\"\n     }\n\n     ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/webservers/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"webservers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8889/webservers/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8889/webservers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"webservers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of all Web Servers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/webservers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"webservers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of a specific webserver",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8889/webservers/2/requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8889",
+					"path": [
+						"webservers",
+						"2",
+						"requests"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

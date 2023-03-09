@@ -1,0 +1,25 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+
+    "rules": {
+        "no-var": "error",
+        "no-mixed-spaces-and-tabs": "off",
+
+        "semi": "off",
+        "no-multiple-empty-lines": "off",
+        "prefer-const": "warn",
+        "no-extra-boolean-cast": 1,
+        "new-parens": 1,
+        "no-use-before-define": "off",
+
+        "no-unused-vars": "warn"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020
+    }
+}
