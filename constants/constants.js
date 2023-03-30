@@ -1,10 +1,10 @@
 let INTERVAL
 if (process.env.NODE_ENV === 'dev') {
-    console.log('INTERVAL=', 6)
+    console.log('INTERVAL checking for development =', 6, 'sec ')
     INTERVAL = 6 * 1000 //6 sec
 }
 if (process.env.NODE_ENV === 'prod') {
-    console.log('INTERVAL=', 60)
+    console.log('INTERVAL checking for production =', 60, 'sec ')
     INTERVAL = 60 * 1000 //60 sec
 }
 

@@ -5,14 +5,14 @@ class WebserversService {
     findAllWebservers(req, res) {
         return new Promise((resolve, reject) => {
             const sqlQuery = `SELECT * from ${TABLE_NAME_WEBSERVERS}`
-            poolConnection(sqlQuery)
+            poolConnection(req, res, resolve, reject, sqlQuery)
         })
     }
 
     getWebserverById(req, res) {
         return new Promise((resolve, reject) => {
             const sqlQuery = `SELECT * from ${TABLE_NAME_WEBSERVERS} WHERE id = ?`
-            poolConnection(sqlQuery, [req])
+            poolConnection(req, res, resolve, reject, sqlQuery, [req])
         })
     }
 
@@ -26,7 +26,7 @@ class WebserversService {
                 status: '',
             }
 
-            poolConnection(sqlQuery, webserver)
+            poolConnection(req, res, resolve, reject, sqlQuery, webserver)
         })
     }
 
@@ -34,14 +34,14 @@ class WebserversService {
         return new Promise((resolve, reject) => {
             const { id, name, uri, status } = req
             const sqlQuery = `UPDATE ${TABLE_NAME_WEBSERVERS} SET name = ?,  uri = ?,  status = ?  WHERE id = ?`
-            poolConnection(sqlQuery, [name, uri, status, id])
+            poolConnection(req, res, resolve, reject, sqlQuery, [name, uri, status, id])
         })
     }
 
     deleteWebserver(req, res) {
         return new Promise((resolve, reject) => {
             const sqlQuery = `DELETE from ${TABLE_NAME_WEBSERVERS} WHERE id = ?`
-            poolConnection(sqlQuery, [req])
+            poolConnection(req, res, resolve, reject, sqlQuery, [req])
         })
     }
 }

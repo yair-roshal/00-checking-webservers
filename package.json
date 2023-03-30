@@ -1,5 +1,5 @@
 {
-    "name": "0-monolith-webservers",
+    "name": "00-checking-webservers",
     "version": "1.0.0",
     "description": "",
     "main": "server.js",

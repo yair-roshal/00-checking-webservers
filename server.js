@@ -22,7 +22,8 @@ const {
 // const port = '8889'
 
 const host = process.env.HOST
-const port = process.env.PORT || 5000
+const port =  5000
+// const port = process.env.PORT || 5000
 
 async function checkCodeResponse(webServer) {
     let isStatusOk = false
@@ -111,11 +112,12 @@ async function findAllRequestsFunc({ web_serv_id, limit }) {
 //MAIN------------------------------
 
 setInterval(async () => {
+    
+    console.log('11111')
     const webServers = await WebserversService.findAllWebservers()
-
+    console.log('22222')
     webServers.forEach(async (webServer) => {
         let isStatusOk = false
-
         const created = Date.now()
         const createdNormal = Date(Date.now()).toString()
         console.log('______webServer_____=', webServer)
@@ -139,7 +141,7 @@ setInterval(async () => {
         const requests = findAllRequestsFunc({
             web_serv_id: webServer.id,
             limit: N_SUCCESSES_RECORDS,
-        }).then((res)=>console.log('res333', res))
+        }).then((res) => console.log('res333', res))
         // console.log('requests333', requests)
 
         const nSuccesses = requests.filter(
